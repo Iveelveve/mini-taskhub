@@ -27,6 +27,40 @@ const s = {
     lineHeight: 1.7,
     maxWidth: "480px",
   },
+  infoBox: (dark) => ({
+    background: dark ? "#1E1E1E" : "#fff",
+    border: dark ? "1.5px solid #2A2A2A" : "1.5px solid #ECEAE3",
+    borderRadius: "14px",
+    padding: "20px 24px",
+    marginBottom: "12px",
+    display: "flex",
+    alignItems: "center",
+    gap: "16px",
+  }),
+  infoIcon: {
+    width: "40px",
+    height: "40px",
+    borderRadius: "10px",
+    background: "#FEF0E8",
+    color: "#E8621A",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontSize: "20px",
+    flexShrink: 0,
+  },
+  infoLabel: {
+    fontSize: "11px",
+    fontWeight: 700,
+    letterSpacing: "0.08em",
+    color: "#E8621A",
+    marginBottom: "2px",
+  },
+  infoValue: (dark) => ({
+    fontSize: "15px",
+    fontWeight: 600,
+    color: dark ? "#F0EDE8" : "#1A1915",
+  }),
   featureGrid: {
     display: "grid",
     gridTemplateColumns: "1fr 1fr",
@@ -70,6 +104,7 @@ const s = {
     border: dark ? "1.5px solid #2A2A2A" : "1.5px solid #ECEAE3",
     borderRadius: "14px",
     padding: "20px",
+    marginBottom: "12px",
   }),
   techLabel: {
     fontSize: "11px",
@@ -96,7 +131,6 @@ const s = {
     color: "#AAA",
     marginTop: "16px",
   },
-  
 };
 
 const FEATURES = [
@@ -108,32 +142,49 @@ const FEATURES = [
 
 const TECH = ["React 18", "React Router v6", "Tailwind CSS v3", "Context API", "JSONPlaceholder"];
 
+const INFO = [
+  { icon: "👤", label: "ОЮУТНЫ НЭР", value: "Iveel" },
+  { icon: "🏫", label: "ИХ СУРГУУЛЬ", value: "UFE" },
+  { icon: "🎨", label: "МЭРГЭЖИЛ", value: "Tech UI/UX Designer" },
+  { icon: "📚", label: "КУРС", value: "2-р курс" },
+  { icon: "🪪", label: "ОЮУТНЫ КОД", value: "B24FM1035" },
+];
+
 export default function About({ dark }) {
   return (
-    <>
-      {/* Hero */}
+    <div style={{ padding: "2rem" }}>
       <div style={s.hero}>
-        <div style={s.heroLabel}>MINI TASKHUB</div>
+        <div style={s.heroLabel}>MINI TASKHUB — БИЕ ДААЛТ</div>
         <h1 style={s.heroTitle}>React-ийн үндсэн<br />ойлголтуудыг практикт</h1>
         <p style={s.heroDesc}>
           Routing, State Management, Form Validation, API Integration бүгдийг агуулсан жижиг бүтээмжийн апп.
         </p>
       </div>
 
-      {/* Feature cards */}
-      <div style={s.featureGrid}>
-        {FEATURES.map((f) => (
-          <div key={f.name} style={s.featureCard(dark)}>
-            <div style={s.featureIcon}>{f.icon}</div>
-            <div>
-              <p style={s.featureName(dark)}>{f.name}</p>
-              <p style={s.featureDesc}>{f.desc}</p>
-            </div>
+      {INFO.map((item) => (
+        <div key={item.label} style={s.infoBox(dark)}>
+          <div style={s.infoIcon}>{item.icon}</div>
+          <div>
+            <p style={s.infoLabel}>{item.label}</p>
+            <p style={s.infoValue(dark)}>{item.value}</p>
           </div>
-        ))}
+        </div>
+      ))}
+
+      <div style={{ marginTop: "2rem", marginBottom: "1rem" }}>
+        <div style={s.featureGrid}>
+          {FEATURES.map((f) => (
+            <div key={f.name} style={s.featureCard(dark)}>
+              <div style={s.featureIcon}>{f.icon}</div>
+              <div>
+                <p style={s.featureName(dark)}>{f.name}</p>
+                <p style={s.featureDesc}>{f.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Tech stack */}
       <div style={s.techBox(dark)}>
         <p style={s.techLabel}>TECH STACK</p>
         <div style={s.techStack}>
@@ -141,8 +192,8 @@ export default function About({ dark }) {
             <span key={t} style={s.techPill(dark)}>{t}</span>
           ))}
         </div>
-        <p style={s.footer}>Frontend Development Биедаалт — 2025</p>
+        <p style={s.footer}>Frontend Development Биедаалт — 2026</p>
       </div>
-    </>
+    </div>
   );
 }
