@@ -1,0 +1,52 @@
+/* App.css esvel index.css file deeree nemne */
+
+/* Task-uud baigaa hesgiig card bolgoh */
+.task-item {
+  background-color: #1a1a1a; /* Bagaj zergiin saaral-har */
+  border: 1px solid #333;    /* Sulhan huree */
+  border-radius: 12px;       /* Moltsog bulan */
+  padding: 16px;
+  margin-bottom: 12px;
+  list-style: none;
+  transition: 0.3s;
+}
+
+.task-item:hover {
+  border-color: #3b82f6;     /* Mouse-oo deere n avchirhad tsenker border */
+  transform: translateY(-2px);
+}
+
+/* Garkhig text */
+.task-title {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+/* Tsag bolon ognoo */
+.task-date {
+  color: #888;
+  font-size: 0.85rem;
+}
+
+/* Input heseg */
+input[type="text"] {
+  background: #222;
+  border: 1px solid #444;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 8px;
+  outline: none;
+}
+
+/* Tovchluur */
+button {
+  background: #3b82f6;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}

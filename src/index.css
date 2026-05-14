@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --transition-speed: 0.3s;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  @apply transition-colors duration-300;
+}
+
+/* Light Mode */
+.light {
+  background-color: #f8f5f0;
+  color: #333333;
+}
+
+/* Dark Mode */
+.dark {
+  background-color: #0f0f0e;
+  color: #e0e0e0;
+}
+
+/* Card-ны үндсэн загвар */
+.card {
+  @apply rounded-2xl p-4 transition-all duration-300;
+  background-color: white;
+  border: 1px solid #e1e8ed;
+}
+
+.dark .card {
+  background-color: #1a1a19;
+  border: 1px solid #2d2d2d;
+}
+.app {
+  min-height: 100vh;
+  background: #F7F5F0;
+  color: #1A1915;
+  font-family: 'DM Sans', 'Helvetica Neue', sans-serif;
+}
+
+.app.dark {
+  background: #111;
+  color: #F0EDE8;
+}
+
+.main {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
